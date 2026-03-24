@@ -3,6 +3,19 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
   command = "checktime",
 })
 
+-- Quarto keymaps (active in .qmd files)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "quarto",
+  callback = function()
+    vim.keymap.set("n", "<leader>qp", ":QuartoPreview<CR>",      { buffer = true, desc = "Preview document" })
+    vim.keymap.set("n", "<leader>qq", ":QuartoClosePreview<CR>", { buffer = true, desc = "Close preview" })
+    vim.keymap.set("n", "<leader>qr", ":QuartoSendAbove<CR>",    { buffer = true, desc = "Run all chunks above" })
+    vim.keymap.set("n", "<leader>qc", ":QuartoSendChunk<CR>",    { buffer = true, desc = "Run current chunk" })
+    vim.keymap.set("n", "<leader>qa", ":QuartoSendAll<CR>",      { buffer = true, desc = "Run all chunks" })
+    vim.keymap.set("n", "<leader>qR", ":QuartoRender<CR>",       { buffer = true, desc = "Render to PDF/HTML" })
+  end,
+})
+
 -- R filetype keymaps (buffer-local)
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "r",

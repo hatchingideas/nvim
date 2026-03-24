@@ -10,6 +10,7 @@ vim.opt.wrap = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.autoread = true
+vim.opt.updatetime = 300  -- ms before CursorHold fires (also speeds up LSP diagnostics)
 -- Requires xclip, xsel, or wl-clipboard on Ubuntu: sudo apt install xclip
 vim.opt.clipboard = "unnamedplus"
 
