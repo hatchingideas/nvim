@@ -1,16 +1,8 @@
 return {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function()
-      require("nvim-treesitter").setup()
-
-      -- Enable built-in treesitter highlighting for all supported filetypes
-      vim.api.nvim_create_autocmd("FileType", {
-        callback = function()
-          pcall(vim.treesitter.start)
-        end,
-      })
-    end,
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  opts = {
+    ensure_installed = { "python", "r", "lua", "markdown", "vim", "vimdoc" },
+    highlight = { enable = true },
   },
 }
