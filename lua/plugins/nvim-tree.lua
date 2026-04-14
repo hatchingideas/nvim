@@ -1,6 +1,2 @@
-return {
-  "nvim-tree/nvim-tree.lua",
-  config = function()
-    require("nvim-tree").setup()
-  end,
-}
+-- migrated to plugin/nvim-tree.lua (vim.pack)
+return {}

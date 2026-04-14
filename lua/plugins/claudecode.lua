@@ -1,5 +1,2 @@
-return {
-  "coder/claudecode.nvim",
-  dependencies = { "folke/snacks.nvim" },
-  config = true,
-}
+-- migrated to plugin/claudecode.lua (vim.pack)
+return {}

@@ -1,1 +1,2 @@
-return { "lewis6991/gitsigns.nvim", config = true }
+-- migrated to plugin/gitsigns.lua (vim.pack)
+return {}

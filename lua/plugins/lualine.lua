@@ -1,1 +1,2 @@
-return { "nvim-lualine/lualine.nvim", config = true }
+-- migrated to plugin/lualine.lua (vim.pack)
+return {}

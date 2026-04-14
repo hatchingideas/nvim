@@ -1,13 +1,2 @@
-return {
-  "saghen/blink.cmp",
-  version = "*",
-  dependencies = {
-    "rafamadriz/friendly-snippets",
-  },
-  opts = {
-    keymap = { preset = "default" },
-    sources = {
-      default = { "lsp", "path", "snippets", "buffer" },
-    },
-  },
-}
+-- migrated to plugin/lsp.lua (vim.pack, together with mason and lspconfig)
+return {}

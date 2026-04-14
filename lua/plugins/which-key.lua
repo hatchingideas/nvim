@@ -1,5 +1,2 @@
-return {
-  "folke/which-key.nvim",
-  event = "VeryLazy",
-  opts = {},
-}
+-- migrated to plugin/which-key.lua (vim.pack)
+return {}

@@ -1,1 +1,2 @@
-return { "sindrets/diffview.nvim" }
+-- migrated to plugin/diffview.lua (vim.pack)
+return {}

@@ -1,21 +1,10 @@
+vim.loader.enable()   -- bytecode-cache Lua modules (same as Lazy's performance.cache)
+
 -- ============================================
--- Leader key (must be set before lazy.setup)
+-- Leader key
 -- ============================================
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
--- ============================================
--- Bootstrap lazy.nvim
--- ============================================
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git", "clone", "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", lazypath
-  })
-end
-vim.opt.rtp:prepend(lazypath)
 
 -- ============================================
 -- Shell: WSL zsh on Windows, zsh on Linux
@@ -46,13 +35,6 @@ vim.opt.updatetime = 250
 -- Force buffer reload on focus (important for Claude Code file changes)
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
   command = "checktime"
-})
-
--- ============================================
--- Plugins
--- ============================================
-require("lazy").setup("plugins", {
-  git = { timeout = 600 },
 })
 
 -- ============================================

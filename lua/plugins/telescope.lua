@@ -1,4 +1,2 @@
-return {
-  "nvim-telescope/telescope.nvim",
-  dependencies = { "nvim-lua/plenary.nvim" },
-}
+-- migrated to plugin/telescope.lua (vim.pack)
+return {}

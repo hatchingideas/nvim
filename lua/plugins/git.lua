@@ -1,4 +1,4 @@
-return {
-  { "sindrets/diffview.nvim" },
-  { "lewis6991/gitsigns.nvim", config = true },
-}
+-- all entries migrated to plugin/ (vim.pack):
+--   diffview  → plugin/diffview.lua
+--   gitsigns  → plugin/gitsigns.lua
+return {}
