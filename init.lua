@@ -50,7 +50,7 @@ vim.keymap.set("n", "<leader>gc", "<cmd>DiffviewClose<CR>",        { silent = tr
 vim.keymap.set("n", "<leader>tw", "<cmd>belowright split | terminal " .. shell_cmd .. "<CR>", { silent = true, desc = "Open terminal" })
 vim.keymap.set("n", "<leader>ty", "<cmd>belowright split | terminal python %<CR>",   { silent = true, desc = "Run current file in Python" })
 
--- Window navigation: handled by vim-tmux-navigator plugin (lua/plugins/vim-tmux-navigator.lua)
+-- Window navigation: handled by vim-tmux-navigator plugin (plugin/vim-tmux-navigator.lua)
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>",        { silent = true, desc = "Exit terminal mode" })
 
 -- DAP debugger keymaps
@@ -87,6 +87,9 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_user_command("Coding", function()
   -- Reset to a single window so layout is predictable
   vim.cmd("only")
+
+  -- Ensure the bufferline buffer tabs are visible in this layout
+  vim.o.showtabline = 2
 
   -- File tree on the left
   vim.cmd("NvimTreeOpen")

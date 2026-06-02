@@ -34,6 +34,8 @@ vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
       runtime = { version = 'LuaJIT' },
+      -- `vim` is a Neovim-injected global; tell lua_ls so it stops flagging it.
+      diagnostics = { globals = { 'vim' } },
       workspace = {
         library = { vim.env.VIMRUNTIME },
         checkThirdParty = false,
